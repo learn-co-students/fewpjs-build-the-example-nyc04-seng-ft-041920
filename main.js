@@ -1,13 +1,9 @@
 // Defining text characters for the empty and full hearts for you to use later.
 const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
-
 // Your JavaScript code goes here!
 let hearts = document.querySelectorAll('.like-glyph')
-
-// let modal = document.getElementById("modal")
 function callServer(event) {
-
   let hrt = event.target
   mimicServerCall().then((success) => {
     if (hrt.innerHTML === EMPTY_HEART) {
@@ -21,25 +17,16 @@ function callServer(event) {
   ).catch((error) => {
     let modal = document.getElementById("modal")
     modal.innerText = error
-    modal.classList.add("visible")
+    modal.classList.toggle("visible")
     setTimeout(function () {
-      modal.classList.remove("visible")
+      modal.classList.toggle("visible")
     }, 5000);
   })
 }
 
-// hearts.forEach((heart) => {
-
-//   })
-// })
-
 for (let i = 0; i < hearts.length; i++) {
   hearts[i].addEventListener('click', callServer)
 }
-//     }
-//   })
-// }
-
 
 
 //------------------------------------------------------------------------------
