@@ -29,11 +29,11 @@ function displayModalError(error) {
 function processLike(heart) {
   if (heart.innerHTML === FULL_HEART) {
     heart.innerHTML = EMPTY_HEART;
-    heart.style.color = "";
+    heart.classList.toggle("activated-heart")
   }
   else {
     heart.innerHTML = FULL_HEART;
-    heart.style.color = "red";
+    heart.classList.toggle("activated-heart")
   }
 }
 
