@@ -15,7 +15,7 @@ likeHeart.forEach(element => {
   .then(function(response){
     if (heart.innerText == EMPTY_HEART){
       heart.innerText = FULL_HEART
-      heart.className += " activated-heart"
+      heart.className += "activated-heart"
 
     }
     else{
