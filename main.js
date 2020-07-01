@@ -4,8 +4,17 @@ const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
 
+const modal = document.querySelector("#modal")
+modal.className = "hidden"
 
-
+const footer = document.querySelector("footer")
+console.log(footer)
+footer.addEventListener("click", (event) => {
+  if (event.target.matches(".like-glyph")) {
+    mimicServerCall().then((resp) => resp.json() )
+    .catch(() => {})
+  }
+})
 
 //------------------------------------------------------------------------------
 // Ignore after this point. Used only for demo purposes
@@ -21,5 +30,5 @@ function mimicServerCall(url="http://mimicServer.example.com", config={}) {
         resolve("Pretend remote server notified of action!");
       }
     }, 300);
-  });
+  })
 }
