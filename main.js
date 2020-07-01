@@ -11,8 +11,7 @@ const footer = document.querySelector("footer")
 console.log(footer)
 footer.addEventListener("click", (event) => {
   if (event.target.matches(".like-glyph")) {
-    mimicServerCall().then((resp) => resp.json() )
-    .catch(() => {})
+    // Code here
   }
 })
 
